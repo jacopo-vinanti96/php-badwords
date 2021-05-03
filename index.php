@@ -3,8 +3,11 @@
   $msgLe = strlen($msg);
   $bw = $_GET["bw"];
   $bwPos = strpos( $msg, $bw );
+  $bwRep = '<span class="bw">***</span>';
   if ( $bwPos !== false ) {
-    $msg = str_replace( $bw, '***', $msg );
+    $msg = str_replace( $bw, $bwRep, $msg );
+  } else {
+    $msg .= '<br>Nessuna parola censurabile rilevata.';
   }
 ?>
 <!DOCTYPE html>
@@ -13,7 +16,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>S%@#!</title>
 </head>
 <body>
   <main>
@@ -21,7 +25,7 @@
       Paragrafo censurato
     </h1>
     <p>
-      <?php echo $msg."\n Lunghezza paragrafo: ".$msgLe; ?>
+      <?php echo $msg."<br>Lunghezza paragrafo: "."<span class=\"blue\">".$msgLe."</span>"; ?>
     </p>
   </main>
 

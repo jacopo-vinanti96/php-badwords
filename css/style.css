@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  padding-top: 2%;
+}
+
+main > * {
+  text-align: center;
+}
+
+.bw {
+  color: red;
+  position: relative;
+}
+
+.bw:hover::before {
+  position: absolute;
+  content: 'S%@#!';
+  font-size: 15px;
+  top: -30px;
+  right: -40px;
+  padding: 0 5px;
+  color: #22333B;
+  background-color: #F3DFA2;
+  border-radius: 20px;
+}
+
+.bw:hover::after {
+  position: absolute;
+  content: '';
+  top: -3px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #F3DFA2;
+  transform: rotate(20deg);
+}
+
+.blue {
+  color: blue;
+}
+
+p {
+  line-height: 30px;
+  font-size: 20px;
+  margin-top: 40px;
+}
